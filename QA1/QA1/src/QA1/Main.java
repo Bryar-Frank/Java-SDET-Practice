@@ -108,7 +108,7 @@ class Car {
             TimeUnit.SECONDS.sleep(1);
         } catch (Exception e) {e.printStackTrace();}
         
-        while (road.length() < 120) {
+        while (road.length() < 110) {
             try {
                 System.out.print("\033[4F\33[K");  
                 System.out.flush();
