@@ -1,0 +1,23 @@
+# THIS is a config file
+# can be application.properties file (OR <>.yamal) file
+# has to be in src/main/resources
+#
+#   Properties your project uses (even if environment changes)
+#   
+
+spring:
+    application:
+        name: hello-spring-boot # sets the name for the project
+        admin:
+            enabled: false      # this is the default value - enable admin privileges for your project - only change this if you know what youre doing
+    config:
+        name: application       # this is the default value - this sets the name for your config file - only change this if you know what youre doing
+    output:
+        ansi:
+            enabled: ALWAYS     # lets your terminal display colors
+server:
+    port: 8282                  # sets the project port number - 8080 is default
+
+# EXAMPLES
+# spring.application.admin.enable=false
+# server.port=8282
