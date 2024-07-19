@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SpringMvcApplication<spring-mvc>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.skillstorm.spring_mvc.SpringMvcApplication",
+            "projectName": "spring-mvc",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SpringDataJpaApplication<spring-data-jpa>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.skillstorm.spring_data_jpa.SpringDataJpaApplication",
+            "projectName": "spring-data-jpa",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "env": {
+                "db-username": "postgres",
+                "db-password": "root"
+            }
+        }
+    ]
+}

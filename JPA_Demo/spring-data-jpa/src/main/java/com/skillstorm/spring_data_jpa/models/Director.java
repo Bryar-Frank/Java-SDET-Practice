@@ -1,7 +1,7 @@
 package com.skillstorm.spring_data_jpa.models;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,9 +24,23 @@ public class Director {
     @Column(length=50)
     private String lastName;
 
+
+    /*
+     * Cirular Reference Solution
+     *  1.  @JsonIgnore List<Movie> movies; in Director class
+     *        -one side of the relationship so it is not serialized
+     * 
+     *  2.  @JsonManagedReference <--this one is serialized
+     *      @JsonBackReference  <--this one is not serialized
+     * 
+     *  3.  @JsonIdentityReference(alwaysAsId = true) Director director;            in Movies class
+     *      @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id") class Director { ... }
+     */
+
+
     // targetEntity is optional because Spring Data implies this from field list type
     @OneToMany(mappedBy = "director", targetEntity = Movie.class) 
-    @JsonManagedReference
+    @JsonBackReference
     List<Movie> movies;
  
     public Director(){}
